@@ -1,9 +1,14 @@
 import React from 'react'
+import CausaDeMuerte from './CausaDeMuerte'
+import EscenaCrimen from './EscenaCrimen'
+import PistasForenses from './PistasForenses'
+import SobreAgresor from './SobreAgresor'
+import Victimologia from './Victimologia'
 
 const Homicidio = () => {
     return (
         <>
-        <div>
+        <form >
             <div className="container mb-5">
                 <div className="row">
                     <div className="col">
@@ -11,8 +16,8 @@ const Homicidio = () => {
                         <span>Código: 100 - 199</span>
                     </div>
                     <div className="col">
-                        <span>Subcategoría:</span>
-                        <select className="form-select" aria-label="Default select example">
+                        <label htmlFor="homicidio-subc" >Subcategoría:</label>
+                        <select className="form-select" aria-label="Default select example" id="homicidio-subc" >
                             <option selected>Seleccione la agrupación </option>
                             <option value="100">100: Asociación Criminal</option>
                             <option value="101">101: Asesinato por contrato</option>
@@ -22,8 +27,8 @@ const Homicidio = () => {
                         </select>
                     </div>
                     <div className="col">
-                        <span>Específico:</span>
-                        <select className="form-select" aria-label="Default select example">
+                        <label htmlFor="espec">Específico:</label>
+                        <select className="form-select" aria-label="Default select example" id="espec">
                             <option selected>Seleccione la clasificación específica</option>
                             <option value="1">.01: Asesinato indiscrimando</option>
                             <option value="2">.02: Asesinato situacional</option>
@@ -32,31 +37,38 @@ const Homicidio = () => {
                 </div>
             </div>
             <hr/>
-            <div className="container mb-2">
+            <div className="form-row mb-2">
                 <div className="row">
                     <div className="col">
-                        <h3>Victimología</h3>
+                        <Victimologia/>
+                        
                     </div>
                     <div className="col">
-                        <h3>Lugar del crimen</h3>
+                        <EscenaCrimen />
                     </div>
                     <div className="col">
-                        <h3>Escena</h3>
+                        <CausaDeMuerte />
                     </div>
                 </div>
             </div>
             <hr/>
-            <div className="container mb-2">
+            <div className="form-row mb-2">
                 <div className="row">
                     <div className="col">
-                        <h3>Pistas forenses</h3>
+                        <PistasForenses />
                     </div>
                     <div className="col">
-                        <h3>Sobre el agresor</h3>
+                        <SobreAgresor/> 
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="offset-8 mt-2">
+                <input type="reset" className="rounded-2 "></input>
+                <buton type="submit" className="btn btn-info float-right">Enviar</buton>
+            </div>
+        </form>
+
+
     </>
     )
 }
